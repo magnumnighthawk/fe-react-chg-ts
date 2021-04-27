@@ -1,5 +1,6 @@
-import { Typography, Link, List, ListItem } from '@material-ui/core';
+import { Link, ListItem } from '@material-ui/core';
 import { NextPage } from 'next';
+import { CenteredSection, StyledList } from 'lib/global-styles';
 
 const HomePage: NextPage = () => {
   const lenders = [
@@ -9,11 +10,9 @@ const HomePage: NextPage = () => {
   ];
 
   return (
-    <>
-      <Typography variant="h5" component="h5">
-        fe-react-chg-ts
-      </Typography>
-      <List>
+    <CenteredSection>
+      <h1>Choose a bank</h1>
+      <StyledList>
         {lenders.map((lender) => (
           <ListItem key={lender.name}>
             <Link data-testid={lender.slug} href={`/${lender.slug}`}>
@@ -21,8 +20,8 @@ const HomePage: NextPage = () => {
             </Link>
           </ListItem>
         ))}
-      </List>
-    </>
+      </StyledList>
+    </CenteredSection>
   );
 };
 

@@ -1,14 +1,15 @@
+export type TextFields =
+  | 'first_name'
+  | 'last_name'
+  | 'email'
+  | 'date_of_birth'
+  | 'monthly_income'
+  | 'gender'
+  | 'address';
+
 export interface LenderGetResponse {
   name: string;
-  fields: Array<
-    | 'first_name'
-    | 'last_name'
-    | 'email'
-    | 'date_of_birth'
-    | 'monthly_income'
-    | 'gender'
-    | 'address'
-  >;
+  fields: Array<TextFields>;
 }
 
 export interface LenderGetResponseExtended {
